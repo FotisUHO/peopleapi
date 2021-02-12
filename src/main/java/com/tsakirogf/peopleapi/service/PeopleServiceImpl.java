@@ -28,4 +28,10 @@ public class PeopleServiceImpl implements iPeopleService
     {
         this.peopleRepository.delete(people);
     }
+
+    @Override
+    public void deletePeopleById(long id)
+    {
+        this.peopleRepository.deleteById(id);
+    }
 }
