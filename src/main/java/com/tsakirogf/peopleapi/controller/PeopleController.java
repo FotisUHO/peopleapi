@@ -3,7 +3,6 @@ package com.tsakirogf.peopleapi.controller;
 import com.tsakirogf.peopleapi.model.People;
 import com.tsakirogf.peopleapi.service.PeopleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -28,12 +27,6 @@ public class PeopleController
     public People savePeople(@RequestBody People people)
     {
         return peopleService.savePeople(people);
-    }
-
-    @DeleteMapping(value = {"/deleteid"})
-    public void deletePeopleById(@RequestParam(value = "id") long id)
-    {
-        peopleService.deletePeopleById(id);
     }
 
     @DeleteMapping(value = {"/"})
