@@ -29,4 +29,24 @@ public interface iPeopleService
      * @param id The id of the record
      */
     void deletePeopleById(long id);
+
+    /**
+     * @brief Overloaded function that search for people
+     *        elements with a specific name parameter.
+     * @param name Query param in a GET Request
+     *             (i.e. /api/v2/people/search?name=xxx)
+     * @return an iterable of peoples matching the search criteria
+     */
+    Iterable<People> findByName(String name);
+
+    /**
+     * @brief Overloaded function that search for people
+     *        elements with a specific name parameter.
+     *
+     * @param name  Query param in a GET Request
+     *            (i.e. /api/v2/people/search?name=xxx&caseSensitive=true)
+     * @param caseSensitivity  Query param in a GET Request
+     * @return  an iterable of peoples matching the search criteria
+     */
+    Iterable<People> findByName(String name, boolean caseSensitivity);
 }
